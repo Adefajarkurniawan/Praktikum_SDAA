@@ -119,7 +119,7 @@ void hapusMahasiswa(Node* &head, int &jumlah) {
 
     Node* temp = head;
 
-    // Jika node pertama yang akan dihapus
+    
     if (index == 1) {
         head = head->next; 
         delete temp; 
@@ -130,7 +130,7 @@ void hapusMahasiswa(Node* &head, int &jumlah) {
             current = current->next;
         }
 
-        // Simpan node yang akan dihapus
+        
         Node* nodeToDelete = current->next;
         
         current->next = nodeToDelete->next;
