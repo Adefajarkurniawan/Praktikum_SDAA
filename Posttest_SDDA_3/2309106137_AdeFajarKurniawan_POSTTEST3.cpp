@@ -18,15 +18,15 @@ struct Node {
 
 
 
-// Function to create a new node
+
 Node* createNode(Mahasiswa mhs) {
     Node* newNode = new Node;
     newNode->data = mhs;
-    newNode->next = NULL; //ndode terakhir atau baru
+    newNode->next = NULL; 
     return newNode;
 }
 
-// Function to insert a new mahasiswa at the end of the list
+
 void inputMahasiswa(Node* &head, Mahasiswa &mhs ) {
     
     cout << "Masukkan Nama: ";
@@ -54,7 +54,7 @@ void inputMahasiswa(Node* &head, Mahasiswa &mhs ) {
     cout << "Data mahasiswa berhasil ditambahkan.\n";
 }
 
-// Function to display all mahasiswa data
+
 void tampilkanMahasiswa(Node* head) {
     if (head == NULL) {
         cout << "Tidak ada data mahasiswa.\n";
@@ -75,7 +75,6 @@ void tampilkanMahasiswa(Node* head) {
     }
 }
 
-// Function to edit mahasiswa data
 void editMahasiswa(Node* head, int jumlah) {
     int index;
     cout << "Masukkan nomor mahasiswa yang ingin diedit (1 - " << jumlah << "): ";
@@ -106,7 +105,7 @@ void editMahasiswa(Node* head, int jumlah) {
     cout << "Data mahasiswa berhasil diubah.\n";
 }
 
-// Function to delete a mahasiswa from the list
+
 void hapusMahasiswa(Node* &head, int &jumlah) {
     int index;
     cout << "Masukkan nomor mahasiswa yang ingin dihapus (1 - " << jumlah << "): ";
@@ -122,10 +121,10 @@ void hapusMahasiswa(Node* &head, int &jumlah) {
 
     // Jika node pertama yang akan dihapus
     if (index == 1) {
-        head = head->next; // Kepala list pindah ke node berikutnya
-        delete temp; // Hapus node lama
+        head = head->next; 
+        delete temp; 
     } else {
-        // Temukan node sebelum node yang akan dihapus
+       
         Node* current = head;
         for (int i = 1; i < index - 1; i++) {
             current = current->next;
@@ -133,9 +132,9 @@ void hapusMahasiswa(Node* &head, int &jumlah) {
 
         // Simpan node yang akan dihapus
         Node* nodeToDelete = current->next;
-        // Hubungkan node sebelum yang dihapus dengan node setelahnya
+        
         current->next = nodeToDelete->next;
-        // Hapus node
+    
         delete nodeToDelete;
     }
 
@@ -146,8 +145,8 @@ void hapusMahasiswa(Node* &head, int &jumlah) {
 
 int main() {
     Mahasiswa mhs;
-    Node* mahasiswa = NULL; // Head pointer to the linked list
-    int jumlah = 0; // Counter for number of mahasiswa
+    Node* mahasiswa = NULL; 
+    int jumlah = 0; 
     int pilihan;
 
     do {
@@ -183,7 +182,7 @@ int main() {
         }
     } while (pilihan != 5);
 
-    // Clean up linked list memory
+    
     while (mahasiswa != NULL) {
         Node* temp = mahasiswa;
         mahasiswa = mahasiswa->next;
